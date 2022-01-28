@@ -17,10 +17,15 @@ public class HeartsClient {
       Group1.adjPrice(10.0);
       System.out.print(Group1.getCostPerPound());
       System.out.println("\n");
-      System.out.print("AdjStock function for Group1: ");
+      System.out.print("AdjStock Function for Group1: ");
       Group1.adjStock(5);
+      System.out.println("\n");
       System.out.println(Group1.getStock());
+      System.out.print("InStock Function for Group1, with 0 Hearts: ");
       System.out.println(Group1.inStock(0));
+      System.out.println("\n");
+      System.out.print("InStock Function for Group1, with 8 Hearts: ");
+      System.out.println(Group1.inStock(8));
     }
     
     public static int buyOut(Heart[] store) {
