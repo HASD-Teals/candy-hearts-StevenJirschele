@@ -85,15 +85,16 @@ public class Heart {
     }
     //Write other methods here (if needed)...
     public void adjPrice(double percentage) {
-        this.costPerPound = costPerPound * percentage;
+        this.costPerPound = this.costPerPound + (costPerPound * percentage / 100);
     }
-    public void inStock(int numHearts) {
+    public boolean inStock(int numHearts) {
         if(numHearts > 0) {
             available = true;
         }
         else {
             available = false;
         }
+        return available;
     }
     public void adjStock(int newStock) {
         this.stock = newStock;
