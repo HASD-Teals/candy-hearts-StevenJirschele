@@ -5,9 +5,9 @@ public class Heart {
     private String sayings;
     private int size;
     private int calories;
-    private int available;
+    private int stock;
     private double costPerPound;
-    private boolean stock;
+    private boolean available;
 
     // CONSTRUCTORS
     public Heart() {
@@ -15,19 +15,20 @@ public class Heart {
     this.sayings = "";
     this.size = 0;
     this.calories = 0;
-    this.available = 0;
+    this.stock = 0;
     this.costPerPound = 0;
-    this.stock = false;
+    this.available = false;
     } 
-    public Heart(String color, String sayings, int calories, int available, double costPerPound, boolean stock) {
+    public Heart(String color, String sayings, int size, int calories, int stock, double costPerPound, boolean available) {
         // This is the default contructor
     //Add overloaded Constructor here...
     this.color = color;
     this.sayings = sayings;
+    this.size = size;
     this.calories = calories;
-    this.available = available;
-    this.costPerPound = costPerPound;
     this.stock = stock;
+    this.costPerPound = costPerPound;
+    this.available = available;
 }
     // ACCESSORS
     public String getColor() {
@@ -42,14 +43,14 @@ public class Heart {
     public int getCalories() {
         return this.calories;
     }
-    public int getAvailable() {
-        return this.available;
+    public int getStock() {
+        return this.stock;
     }
     public double getCostPerPound() {
         return this.costPerPound;
     }
-    public boolean getStock() {
-        return this.stock;
+    public boolean getAvailable() {
+        return this.available;
     }
 
     //Add remaining Accessor methods here...
@@ -68,30 +69,34 @@ public class Heart {
     public void setGetCalories(int calories) {
         this.calories = calories;
     }
-    public void setAvailable(int available) {
-        this.available = available;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
     public void setCostPerPound(int costPerPound) {
         this.costPerPound = costPerPound;
     }
-    public void setStock(boolean stock) {
-        this.stock = stock;
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     // METHODS
     public String report() {
-        return this.color + "\n" + this.available + "\n" + this.stock; // Add other properties here as you add them to the class
+        return this.color + " " + this.size + " " + this.sayings + " " + this.costPerPound + " " + this.stock; // Add other properties here as you add them to the class
     }
     //Write other methods here (if needed)...
-    public double adjPrice(double percentage) {
-        return this.costPerPound = costPerPound * percentage;
+    public void adjPrice(double percentage) {
+        this.costPerPound = costPerPound * percentage;
     }
-    public boolean inStock(int numHearts) {
+    public void inStock(int numHearts) {
         if(numHearts > 0) {
-            return true;
+            available = true;
         }
         else {
-            return false;
+            available = false;
         }
+    }
+    public void adjStock(int newStock) {
+        this.stock = newStock;
+        this.available = this.stock > 0;
     }
 }
