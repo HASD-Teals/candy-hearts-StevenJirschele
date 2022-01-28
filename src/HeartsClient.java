@@ -12,6 +12,7 @@ public class HeartsClient {
       System.out.println("\n");
       placeOrder(store, "Blue", 5);
     }
+    
     public static int buyOut(Heart[] store) {
       int counter = 0;
       for(int i = 0; i < store.length; i++) {
