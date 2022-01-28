@@ -10,7 +10,17 @@ public class HeartsClient {
       System.out.println("\n");
       System.out.print("Number of Hearts Available: " + buyOut(store));
       System.out.println("\n");
-      placeOrder(store, "Blue", 5);
+      System.out.print("Place Order Function for Group1: ");
+      placeOrder(store, "red", 5);
+      System.out.println("\n");
+      System.out.print("AdjPrice Function for Group11: ");
+      Group1.adjPrice(10.0);
+      System.out.print(Group1.getCostPerPound());
+      System.out.println("\n");
+      System.out.print("AdjStock function for Group1: ");
+      Group1.adjStock(5);
+      System.out.println(Group1.getStock());
+      System.out.println(Group1.inStock(0));
     }
     
     public static int buyOut(Heart[] store) {
